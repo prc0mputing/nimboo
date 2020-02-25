@@ -19,7 +19,7 @@ jobs:
         host: ${{ secrets.HOST_IP }}
         username: ${{ secrets.HOST_USER }}
         password: ${{ secrets.HOST_PASSWORD }}
-        port: 22
+        port: ${{ secrets.HOST_PORT }}
         source: "website"
         target: "/home"
 
