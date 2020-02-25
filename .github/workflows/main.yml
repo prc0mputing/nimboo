@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: copy to website
+      run: |
+        mkdir website
+        cp src/* website/
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
@@ -16,8 +20,6 @@ jobs:
         username: ${{ secrets.HOST_USER }}
         password: ${{ secrets.HOST_PASSWORD }}
         port: 22
-        source: "src/*"
-        target: "/home/website"
-    - name: copy to dest
-      run: yes | cp -rf /home/website/src/* ../
+        source: "website"
+        target: "/home"
 
