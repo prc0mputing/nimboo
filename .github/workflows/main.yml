@@ -12,7 +12,7 @@ jobs:
     - name: Copy folder content recursively to remote
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: src
+        local: master
         remote: /home/website
         host: ${{ secrets.HOST_IP }}
         username: ${{ secrets.HOST_USER }}
