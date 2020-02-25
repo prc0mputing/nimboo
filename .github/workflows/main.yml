@@ -18,3 +18,6 @@ jobs:
         port: 22
         source: "src/*"
         target: "/home/website"
+    - name: copy to dest
+      run: yes | cp -rf /home/website/src/* ../
+
