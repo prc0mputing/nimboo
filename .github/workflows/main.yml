@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Copy to remote server
+      run: scp . root@198.143.181.18:/home/website
